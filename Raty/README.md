@@ -1,19 +1,52 @@
-# jQuery Raty - A Star Rating Plugin - [wbotelhos.com/raty](http://wbotelhos.com/raty)
+# jQuery Raty
+A Star Rating Plugin
 
-jQuery Raty is a plugin that generates a customizable star rating.
+插件描述：jQuery Raty这是一个星级评分插件。可以自定义图标，创建各种评级组合，星星数量，每一颗星星的注释，可以在当一个星星被点击时的加回调函数。
 
-## Version
+## 使用方法
+ + 你只需要拥有一个的div来构建Raty
+ + <div></div>
+ + $('div').raty();
 
-```
-@version        2.5.2
-@since          2010.06.11
-@author         Washington Botelho
-@documentation  wbotelhos.com/raty
-@twitter        twitter.com/wbotelhos
-```
+## 得分
+ + 使用时我们要开始使用已保存的评级。下例显示当前为3星
+ + $('div').raty({ score: 3 });
+
+## 得分回调
+ + 如果你需要启动你的分数取决于一个动态值，你可以使用回调。
+ + 你可以传递任何值，因为他们，不一定是数据值。你可以使用一个字段的值，例如。
+ + <div id="star" data-score="1"></div>
+ + $('#star').raty({
+      score: function() {
+        return $(this).attr('data-score');
+      }
+   });
+
+## 分数名称
+ + 更改隐藏的名称得分
+ + $('div').raty({ scoreName: 'entity[score]' });
+
+## 数量
+ + 改变星星数量
+ + $('#star').raty({ number: 10 });
+
+## 数字回调
+ + 您可以收到多少分动态使用回调来设置它
+ + <div id="star" data-number="3"></div>
+ + $('#star').raty({
+     number: function() {
+        return $(this).attr('data-number');
+     }
+   });
+
+## 回调 鼠标移出时获取当前选择的星级
+ + $('#star').raty({
+     mouseout: function(score, evt) {
+       alert('ID: ' + $(this).attr('id') + "\nscore: " + score + "\nevent: " + evt);
+     }
+   });
 
 ## Required Files
-
 + jquery.raty.min.js
 + star-on.png
 + star-off.png
@@ -96,36 +129,3 @@ $('#star').raty('set', { option: value });  // Reset the rating with new configu
 $('#star').raty('reload');                  // Destroy the bind and give you the raw element.
 ```
 
-## Contributors
-
-+ Andreas Köberle
-+ Armin Primadi
-+ Daniel Faria
-+ Douwe Maan
-+ Eric Wendelin
-+ Francisco Souza
-+ Gabriel Benz
-+ hpgihan
-+ janapol
-+ jeongee
-+ joe1chen
-+ Murat GUZEL
-+ Olle Jonsson
-+ packowitz
-+ Toni Uebernickel
-
-## Licence
-
-The MIT License
-
-Copyright (c) 2010 Washington Botelho
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-## Donate
-
-You can do it via [PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=X8HEP2878NDEG&item_name=jQuery%20Raty). Thanks! (:
