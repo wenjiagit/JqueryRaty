@@ -5,26 +5,42 @@ A Star Rating Plugin
 
 ## 使用方法
  + 你只需要拥有一个的div来构建Raty
- + <div>我是一个空div用来调星</div>
- + $('div').raty();
+ 
+```html
+  <div></div>
+```
+```html
+ $('div').raty();
+``` 
 
 ## 得分
  + 使用时我们要开始使用已保存的评级。下例显示当前为3星
- + $('div').raty({ score: 3 });
-
+ 
+```html 
+ $('div').raty({ score: 3 });
+``` 
 ## 得分回调
  + 如果你需要启动你的分数取决于一个动态值，你可以使用回调。
  + 你可以传递任何值，因为他们，不一定是数据值。你可以使用一个字段的值，例如。
- + <div id="star" data-score="1"></div>
- + $('#star').raty({
+
+```html
+ <div id="star" data-score="1"></div>
+``` 
+ 
+```html
+$('#star').raty({
       score: function() {
         return $(this).attr('data-score');
       }
    });
+``` 
 
 ## 分数名称
  + 更改隐藏的名称得分
- + $('div').raty({ scoreName: 'entity[score]' });
+ 
+```html
+$('div').raty({ scoreName: 'entity[score]' });
+```
 
 ## 数量
  + 改变星星数量
@@ -32,19 +48,26 @@ A Star Rating Plugin
 
 ## 数字回调
  + 您可以收到多少分动态使用回调来设置它
- + <div id="star" data-number="3"></div>
- + $('#star').raty({
+
+```html
+  <div id="star" data-number="3"></div>
+```  
+```html
+  $('#star').raty({
      number: function() {
         return $(this).attr('data-number');
      }
    });
+ ```
 
 ## 回调 鼠标移出时获取当前选择的星级
- + $('#star').raty({
+```html
+ $('#star').raty({
      mouseout: function(score, evt) {
        alert('ID: ' + $(this).attr('id') + "\nscore: " + score + "\nevent: " + evt);
      }
    });
+ ```
 
 ## Required Files
 + jquery.raty.min.js
