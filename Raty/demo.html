@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width; initial-scale=1; maximum-scale=1" name="viewport">
+
+  <title>JQuery Raty</title>
+  <link type="text/css" rel="stylesheet" href="demo/css/application.css">
+  <script type="text/javascript" src="demo/js/jquery.min.js"></script>
+  <script type="text/javascript" src="lib/jquery.raty.min.js"></script>
+</head>
+<body>
+  <div id="wrapper">
+        <div id="container">
+             <h2 id="click">
+                <a href="#click">Click</a>
+             </h2>
+             <div class="demo">
+                <div id="click-demo"></div>
+             </div>
+        </div>
+  </div>
+
+  <script type="text/javascript">
+    $(function() {
+      $.fn.raty.defaults.path = 'lib/img';
+      $('#click-demo').raty({
+        click: function(score, evt) {
+          alert('ID: ' + $(this).attr('id') + "\nscore: " + score + "\nevent: " + evt.type);
+        }
+      });
+    });
+  </script>
