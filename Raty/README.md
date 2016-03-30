@@ -5,7 +5,7 @@ A Star Rating Plugin
 
 ## 使用方法
  + 你只需要拥有一个的div来构建Raty
- + <div></div>
+ + <div>我是一个空div用来调星</div>
  + $('div').raty();
 
 ## 得分
