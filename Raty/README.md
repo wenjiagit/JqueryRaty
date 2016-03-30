@@ -39,12 +39,14 @@ $('#star').raty({
  + 更改隐藏的名称得分
  
 ```html
-$('div').raty({ scoreName: 'entity[score]' });
+  $('div').raty({ scoreName: 'entity[score]' });
 ```
 
 ## 数量
  + 改变星星数量
- + $('#star').raty({ number: 10 });
+```html 
+ $('#star').raty({ number: 10 });
+ ```
 
 ## 数字回调
  + 您可以收到多少分动态使用回调来设置它
